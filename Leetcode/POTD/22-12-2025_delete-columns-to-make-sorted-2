@@ -1,0 +1,48 @@
+class Solution{
+    public int minDeletionSize(String[] strs){
+        int ans=0;
+        int i=0;
+        int parentsz=strs[0].length();
+        int bck=0;
+        int k=0;
+        int crnt=0;
+        int chk=0;
+
+        boolean[] resolved=new boolean[strs.length-1];
+
+        while(k<parentsz){
+            chk=0;
+            boolean bad=false;
+
+            for(i=0;i<strs.length-1;i++){
+                if(resolved[i]) continue;
+
+                bck=strs[i].charAt(k);
+                crnt=strs[i+1].charAt(k);
+
+                if(bck>crnt){
+                    ans++;
+                    bad=true;
+                    break;
+                }
+                else if(bck<crnt){
+                    chk=1;
+                }
+            }
+
+            if(bad){
+                k++;
+                continue;
+            }
+
+            for(i=0;i<strs.length-1;i++){
+                if(!resolved[i]&&strs[i].charAt(k)<strs[i+1].charAt(k)){
+                    resolved[i]=true;
+                }
+            }
+
+            k++;
+        }
+        return ans;
+    }
+}
