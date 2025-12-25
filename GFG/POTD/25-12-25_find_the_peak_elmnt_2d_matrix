@@ -1,0 +1,40 @@
+class Solution {
+    public ArrayList<Integer> findPeakGrid(int[][] mat) {
+        // code here
+        ArrayList<Integer> ans=new ArrayList<>();
+        int val=0;
+        int top=0,bott=0,lf=0,rigt=0;
+        int flg=0;
+        for(int i=0;i<mat.length;i++){
+            
+            for(int j=0;j<mat[i].length;j++){
+                top=Integer.MIN_VALUE;
+                bott=Integer.MIN_VALUE;
+                lf=Integer.MIN_VALUE;;
+                rigt=Integer.MIN_VALUE;
+                
+             val=mat[i][j];
+             if(i!=0){
+                 top=mat[i-1][j];
+             }
+             if(i!=mat.length-1){
+                 bott=mat[i+1][j];
+             }
+             if(j!=0){
+                 lf=mat[i][j-1];
+             }
+             if(j!=mat[i].length-1){
+                 rigt=mat[i][j+1];
+             }
+             if(val>=top&&val>=bott&&val>=rigt&&val>=lf){
+                 flg=1;
+                 ans.add(i);
+                 ans.add(j);
+                 break;
+             }
+            }
+            if(flg==1)break;
+        }
+        return ans;
+    }
+}
