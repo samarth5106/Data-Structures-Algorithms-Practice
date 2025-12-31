@@ -1,0 +1,55 @@
+import java.util.*;
+
+class Solution{
+    int R,C;
+
+    public int latestDayToCross(int row,int col,int[][] cells){
+        R=row;
+        C=col;
+        int l=0,r=cells.length-1,ans=0;
+        while(l<=r){
+            int mid=(l+r)/2;
+            if(can(mid,cells)){
+                ans=mid;
+                l=mid+1;
+            }else{
+                r=mid-1;
+            }
+        }
+        return ans+1;
+    }
+
+    boolean can(int day,int[][] cells){
+        int[][] grid=new int[R][C];
+        for(int i=0;i<=day;i++){
+            int x=cells[i][0]-1;
+            int y=cells[i][1]-1;
+            grid[x][y]=1;
+        }
+
+        int[][] dir={{1,0},{-1,0},{0,1},{0,-1}};
+        boolean[][] vis=new boolean[R][C];
+        Queue<int[]> q=new LinkedList<>();
+
+        for(int j=0;j<C;j++){
+            if(grid[0][j]==0){
+                q.add(new int[]{0,j});
+                vis[0][j]=true;
+            }
+        }
+
+        while(!q.isEmpty()){
+            int[] cur=q.poll();
+            int i=cur[0],j=cur[1];
+            if(i==R-1) return true;
+            for(int[] d:dir){
+                int ni=i+d[0],nj=j+d[1];
+                if(ni>=0&&nj>=0&&ni<R&&nj<C&&!vis[ni][nj]&&grid[ni][nj]==0){
+                    vis[ni][nj]=true;
+                    q.add(new int[]{ni,nj});
+                }
+            }
+        }
+        return false;
+    }
+}
