@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int countSubarrays(vector<int>& arr, int k) {
+        int odd = 0, l = 0, cnt = 0, ways = 0;
+
+        for (int r = 0; r < arr.size(); r++) {
+
+            if (arr[r] % 2 != 0) {
+                odd++;
+                ways = 0;   // reset
+            }
+
+            while (odd == k) {
+                ways++;
+                if (arr[l] % 2 != 0) odd--;
+                l++;
+            }
+
+            cnt += ways;
+        }
+        return cnt;
+    }
+};
