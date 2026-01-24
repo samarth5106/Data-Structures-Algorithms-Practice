@@ -30,3 +30,7 @@ class Solution {
         return maxArea;
     }
 }
+My approach got TLE as what i did was
+1st loop- iterating in the array and then for each element we used a loop find the 1st smaller elmnt as ocmpare to ith elnnt in left sied , and similarly a loop to find the next smaller elmnt in right side so for each elemtn of array through 2 inner loops we found the Nearest Smaller to the Left and Nearest Smaller to the Right using loop
+so got TLE , inthis approach we used stack instead of using inner loop
+
