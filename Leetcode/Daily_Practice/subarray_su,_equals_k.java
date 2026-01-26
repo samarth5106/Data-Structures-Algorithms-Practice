@@ -18,3 +18,4 @@ class Solution {
         return cnt;
     }
 }
+see i was using sliding window but it worked a litle but the array contains the negative elements too , andin that case the sliding window fails soo we used, prefix sum+Hash Map approach
