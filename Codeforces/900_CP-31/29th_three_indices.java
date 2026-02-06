@@ -34,3 +34,6 @@ public class Main{
         }
     }
 }
+see the approach is har 'j' ke lie ham left ka min element ('i' )and right ka min element ('k') dhundhna hai
+
+and j can only be between index 1 to index n-2 (I am considering 0 based indexing)
