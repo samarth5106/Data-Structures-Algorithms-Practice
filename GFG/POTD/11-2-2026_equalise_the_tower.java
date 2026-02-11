@@ -30,3 +30,12 @@ class Solution{
         return ans;
     }
 }
+
+This is a classic Problem concept - "WEIGHTED MEDIAN" - if sab ka cost 
+same hota to answer normal Median hota ,, but in this case hame 
+Different cost given hai so Weighted Median ka concept lgega it means 1) 
+heights ko sort karo 2) saath me cost ko bhi reorder karo 3) total cost 
+nikalo 4) prefix cost add kro 5) jis point par prefix>=totalCost/2 ho 
+jae ,,, wahi best target hai
+
+so pair bana lo of (Hight, cost) and sort according to height,, total cost sum nikal lo and uska half stoe kar lo then prefix sum cost nikalo and the most that prefix >=totalsum ks half uss point pr jo height hai vahi optimal height hai 
