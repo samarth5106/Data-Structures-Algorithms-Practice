@@ -47,3 +47,5 @@ int main() {
     }
 
 }
+
+Approach-  see main thing was to choose those residents jo kam paise me jyada kaam kr ke de skate the out main concern was Minimum Cost so hamne ek new vector bnaya named "net" uska har ek element was a pair , pair ki first term was the price , and its second term was the number of people it could reach atmost so based of the price hamne sort kar dia ,, and then important thing was ki jo resident ka b[i] was more than p unko to bhul hi jaao as the chief Pak Chunek is himself taking only price - P so we cant pay higher price to other to do the same work for higher price ,,, and  also there is issue of Integer flow so we used "long long" datatype for cost and use "1LL" while multiplication
