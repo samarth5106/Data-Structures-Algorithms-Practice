@@ -25,6 +25,14 @@ class Solution {
                 
             }
             if(arr[i]>val){
+s;
+    }
+};
+
+
+
+
+
                 while(val<high&&arr[i]>val){
                     ans.push_back(val);
                     val++;
