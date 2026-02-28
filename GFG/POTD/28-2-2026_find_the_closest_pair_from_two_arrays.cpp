@@ -44,3 +44,14 @@ class Solution {
        return ans;
     }
 };
+
+
+
+My Approach - See que padh ke samaz to gya tha ki 2 pointers use karna hai firstly maine start  kia i and j ko from index =0 from their respective arrays, and was incrementing i and j by 
+                 1 simultaneously, so basically mai only same index vale pairs ka sum check kr rha tha ,,,
+
+Correct Approach - then maine ek pointer i ko start kia fromthe beginning and 2nd pointer ko start kia j ko from the end of array so and just check kia if the sum is greater than x 
+			then  it means ki mujhe sum ko drecease krna hoga to get it near to the value of X so for that ham 'j' ko decrease krenge and also if sum is less than X 
+			then we need to increase the value of of sum so need of increment so we will increment 'i',, iss approach mein mai issue face kr rha tha for the first time when
+		maine sum nikala of arr1[0]+arr2[arr2.size()-1] ki now ab isko mini me kaise store karu as mini to INT_MAX se initialised hai so diffinitely diff<mini hai so diff mini 
+		mein assign ho jaega ,, so I used the boolean variable only for the calculating sum for  first time
