@@ -49,3 +49,26 @@ int main() {
     }
 
 }
+
+
+
+        else{
+
+        cout<<"-1"<<endl;
+        }
+    }
+
+}
+
+
+Approach (Hinglish):
+Array `s` already non-decreasing order me diya hua hai, isliye same shoe size wale students
+continuous groups me milenge. Condition ye hai ki kisi student ko apne hi shoes nahi
+milne chahiye (`p[i] ≠ i`) aur usko milne wale shoes ka size uske size se chhota bhi nahi
+hona chahiye (`s[p[i]] ≥ s[i]`). Is observation se clear hota hai ki agar kisi size ka
+sirf ek hi student hai to valid shuffling possible nahi hai, kyunki usko kisi aur ka
+chhota shoe mil jayega jo allowed nahi hai. Isliye har equal-size group me kam se kam
+2 students hone chahiye. Har group ke andar hum cyclic shift kar dete hain, matlab
+group ke students ko next wale student ke shoes de dete hain aur last student ko
+group ke first student ke shoes. Isse kisi ko apne shoes nahi milte aur sabko
+same size ke shoes milte hain, jo condition satisfy karta hai.
