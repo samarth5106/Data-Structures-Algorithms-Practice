@@ -86,3 +86,17 @@ private static int[][] createSubMatrix(int[][] matrix, int row, int col) {
         
     }
 }
+
+
+
+Approach - see approach used is Kirchoff's Theorem and there is something called as Laplacian matrix
+
+1) make degree matrix(a diagonal matrix ,, the diagonal elements are the degree of nodes )
+2) make the adjacency matrix 
+3) now do Laplacian matrix = degree matrix - adjacency matrix
+4) delete any ith row and sae=me ith column
+5) determinant of remainning laplacian matrix is the number of Spanning Tree
+
+Edge case - if node is single then number of spanning tree =1
+if number of total edges ==n-1 then answer 1
+
